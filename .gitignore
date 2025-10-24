@@ -1,0 +1,38 @@
+# Rust 编译文件
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# Node.js 依赖
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编译输出
+frontend/dist/
+backend/target/
+
+# 环境文件
+.env
+.env.local
+.env.production
+.env.development
+
+# 日志文件
+*.log
+logs/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE 文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 批处理文件（可选，如果你想保留可以删除这一行）
+*.bat
