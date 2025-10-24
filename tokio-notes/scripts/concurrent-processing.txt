@@ -1,0 +1,8 @@
+// 同时请求多个API，等待所有结果
+async fn fetch_multiple_apis() {
+    let (user, orders, notifications) = tokio::join!(
+        fetch_user(1),
+        fetch_orders(1),
+        fetch_notifications(1)
+    );
+}

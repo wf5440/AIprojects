@@ -1,0 +1,12 @@
+use tokio::net::TcpListener;
+
+async fn handle_tcp_connections() {
+    let listener = TcpListener::bind("127.0.0.1:8080").await.unwrap();
+    
+    while let Ok((socket, _)) = listener.accept().await {
+        // 为每个连接创建异步任务
+        tokio::spawn(async move {
+            process_socket(socket).await;
+        });
+    }
+}

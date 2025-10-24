@@ -1,0 +1,9 @@
+use tokio::time::{sleep, Duration};
+
+async fn background_task() {
+    loop {
+        // 每5秒执行一次
+        sleep(Duration::from_secs(5)).await;
+        cleanup_expired_sessions().await;
+    }
+}
